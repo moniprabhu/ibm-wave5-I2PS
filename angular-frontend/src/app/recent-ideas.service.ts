@@ -10,16 +10,16 @@ export class RecentIdeasService {
   constructor(private httpclient: HttpClient) { }
 
   getRecentIdeas():any{
-    return this.httpclient.get("http://localhost:8063/api/v1/ideas");
+    return this.httpclient.get("http://13.232.118.81:8063/api/v1/ideas");
   }
 
   getIdeaDetails(value):any{
     console.log(value);
-    return this.httpclient.get(`http://localhost:8063/api/v1/idea/${value}`)
+    return this.httpclient.get(`http://13.232.118.81:8063/api/v1/idea/${value}`)
   }
 
   sendToInnovator(title,emailId):any{
-    this.httpclient.put(`http://localhost:8060/api/v1/idea/${title}/${emailId}`,{}).subscribe();
+    this.httpclient.put(`http://13.232.118.81:8060/api/v1/idea/${title}/${emailId}`,{}).subscribe();
     console.log("came");
 
   }
@@ -27,12 +27,12 @@ export class RecentIdeasService {
   getAppliedServiceProviders(title):any
   {
     console.log("here applied people",title)
-    return this.httpclient.get(`http://localhost:8060/api/v1//serviceProviders/${title}`);
+    return this.httpclient.get(`http://13.232.118.81:8060/api/v1//serviceProviders/${title}`);
     console.log("after url")
   }
 
   approveOrRejectSP(title,emailId,status):any{
-this.httpclient.put(`http://localhost:8060/api/v1/serviceProviders/${title}/${emailId}/${status}`,{});
+this.httpclient.put(`http://13.232.118.81:8060/api/v1/serviceProviders/${title}/${emailId}/${status}`,{});
 console.log("coming");
   }
 }

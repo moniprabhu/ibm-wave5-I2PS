@@ -12,13 +12,13 @@ export class PostIdeaServiceService {
 
   postIdea(value): any{
     console.log("in post idea service")
-    this.httpclient.post("http://localhost:8063/api/v1/saved",value).subscribe();
+    this.httpclient.post("http://13.232.118.81:8063/api/v1/saved",value).subscribe();
     console.log("after the post url")
     
   }
 
   getIdeas():any{
-        return this.httpclient.get("http://localhost:8063/api/v1/ideas")
+        return this.httpclient.get("http://13.232.118.81:8063/api/v1/ideas")
 
   }
 
@@ -36,6 +36,6 @@ export class PostIdeaServiceService {
 
   updateIdea(value):any{
     console.log("in post idea service value is=",value)
-    return this.httpclient.put("http://localhost:8063/api/v1/idea",value).subscribe();
+    return this.httpclient.put("http://13.232.118.81:8063/api/v1/idea",value).subscribe();
   } 
 }
