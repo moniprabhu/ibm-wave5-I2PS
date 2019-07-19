@@ -43,14 +43,15 @@ public class SeedData implements ApplicationListener<ContextRefreshedEvent>{
                     for (int i = 1; cellIterator.hasNext(); i++) {
                          ServiceProvider service=new ServiceProvider();
                         for (int j = 0; j <= sheet.getLeftCol(); j++) {
-                            service.setEmailId(workbook.getSheetAt(0).getRow(i).getCell(j + 1).toString());
-                            service.setPassword(workbook.getSheetAt(0).getRow(i).getCell(j + 2).toString());
-                            service.setName(workbook.getSheetAt(0).getRow(i).getCell(j + 3).toString());
-                            service.setDomain(workbook.getSheetAt(0).getRow(i).getCell(j + 4).toString());
-                            service.setSubDomain(List.of(workbook.getSheetAt(0).getRow(i).getCell(j + 5).toString()));
-                            service.setRole(workbook.getSheetAt(0).getRow(i).getCell(j + 6).toString());
-                            service.setSkills(List.of(workbook.getSheetAt(0).getRow(i).getCell(j + 7).toString().split(",")));
-                            service.setAbout(workbook.getSheetAt(0).getRow(i).getCell(j + 8).toString());
+
+                            service.setEmailId(workbook.getSheetAt(0).getRow(i).getCell(j + 0).toString());
+                            service.setPassword(workbook.getSheetAt(0).getRow(i).getCell(j + 1).toString());
+                            service.setName(workbook.getSheetAt(0).getRow(i).getCell(j + 2).toString());
+                            service.setDomain(workbook.getSheetAt(0).getRow(i).getCell(j + 3).toString());
+                            service.setSubDomain(List.of(workbook.getSheetAt(0).getRow(i).getCell(j + 4).toString()));
+                            service.setRole(workbook.getSheetAt(0).getRow(i).getCell(j + 5).toString());
+                            service.setSkills(List.of(workbook.getSheetAt(0).getRow(i).getCell(j + 6).toString().split(",")));
+                            service.setAbout(workbook.getSheetAt(0).getRow(i).getCell(j + 7).toString());
 //                            service.setChargePerHour(workbook.getSheetAt(0).getRow(i).getCell(j + 9).toString());
 
                             serviceProviderRepository.save(service);
