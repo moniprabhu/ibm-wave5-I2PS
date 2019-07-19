@@ -30,6 +30,7 @@ services:
       - recommendation-service
       - service-provider-profile-service
       - user-login-service
+      
     restart: always
     network_mode: "host"
     image: zuul-api
